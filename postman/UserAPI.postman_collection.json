@@ -1,0 +1,195 @@
+{
+  "info": {
+    "name": "User API",
+    "description": "Collection to test Laravel user operations.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Get users (paginated)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/users",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "users"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create user",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Alice Example\",\n  \"email\": \"alice@example.com\",\n  \"password\": \"Secret123\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/users/create",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "create"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Login user",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"ana@example.com\",\n  \"password\": \"password123\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/users/login",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "login"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update username",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"ana@example.com\",\n  \"password\": \"password123\",\n  \"name\": \"Ana Updated\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/users/update-username",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "update-username"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update email",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"ana@example.com\",\n  \"password\": \"password123\",\n  \"new_email\": \"ana.updated@example.com\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/users/update-email",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "update-email"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update password",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"luis@example.com\",\n  \"password\": \"password123\",\n  \"new_password\": \"newPassword456\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/users/update-password",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "update-password"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete user",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"luis@example.com\",\n  \"password\": \"newPassword456\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/users/delete",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "delete"
+          ]
+        }
+      }
+    }
+  ]
+}
